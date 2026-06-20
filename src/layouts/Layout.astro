@@ -1,4 +1,8 @@
 ---
+import '@fontsource/cairo/400.css';
+import '@fontsource/cairo/600.css';
+import '@fontsource/cairo/700.css';
+import '@fontsource/cairo/800.css';
 import '../styles/global.css';
 
 interface Props {
@@ -28,10 +32,6 @@ const navLinks = [
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/favicon.ico" />
-    <!-- Preconnect to Google Fonts for faster First Contentful Paint (FCP) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
     {canonical && <link rel="canonical" href={canonical} />}

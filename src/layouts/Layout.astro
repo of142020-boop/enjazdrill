@@ -52,23 +52,66 @@ const navLinks = [
     <meta name="twitter:description" content={description || title} />
     <meta name="twitter:image" content="https://enjazdrill.com/images/outdoor-image-01.webp" />
 
-    <!-- Schema Markup (JSON-LD) for Local SEO -->
+    <!-- Schema Markup (JSON-LD) for Local SEO & AI -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "HomeAndConstructionBusiness",
       "name": "إنجاز دريل لقص وتخريم الخرسانة",
+      "alternateName": "Enjaz Drill",
+      "description": "شركة متخصصة في قص وتخريم الخرسانة المسلحة بأحدث المعدات الألمانية. نعمل في مدينة 6 أكتوبر والشيخ زايد والقاهرة.",
       "image": "https://enjazdrill.com/images/outdoor-image-01.webp",
       "@id": "https://enjazdrill.com",
       "url": "https://enjazdrill.com",
       "telephone": "+201029834485",
+      "email": "info@enjazdrill.com",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "مدينة 6 أكتوبر",
         "addressLocality": "6 أكتوبر",
         "addressRegion": "الجيزة",
         "addressCountry": "EG"
       },
-      "areaServed": ["6 أكتوبر", "الشيخ زايد", "القاهرة", "الجيزة", "حدائق أكتوبر"],
-      "priceRange": "$$"
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 29.9343,
+        "longitude": 30.9307
+      },
+      "areaServed": [
+        {"@type": "City", "name": "6 أكتوبر"},
+        {"@type": "City", "name": "الشيخ زايد"},
+        {"@type": "City", "name": "حدائق أكتوبر"},
+        {"@type": "City", "name": "القرية الذكية"},
+        {"@type": "City", "name": "القاهرة"},
+        {"@type": "City", "name": "الجيزة"}
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "خدمات قص وتخريم الخرسانة",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "قص الخرسانة بالمنشار",
+              "description": "تنفيذ عمليات قص الجدران والأسقف وفتح الأبواب والنوافذ بأحدث مناشير الخرسانة الألمانية",
+              "url": "https://enjazdrill.com/%D9%82%D8%B5-%D8%AE%D8%B1%D8%B3%D8%A7%D9%86%D8%A9/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "عمل فتحات بالكور (Core Drilling)",
+              "description": "تخريم الخرسانة لعمل مسارات السباكة والكهرباء والتكييف بدقة متناهية وبدون التسبب في أي تشققات",
+              "url": "https://enjazdrill.com/%D9%81%D8%AA%D8%AD%D8%A7%D8%AA-%D9%83%D9%88%D8%B1-%D8%A3%D9%83%D8%AA%D9%88%D8%A8%D8%B1-%D9%88%D8%B2%D8%A7%D9%8A%D8%AF/"
+            }
+          }
+        ]
+      },
+      "priceRange": "$$",
+      "sameAs": [
+        "https://wa.me/201029834485"
+      ]
     })} />
   </head>
   <body>

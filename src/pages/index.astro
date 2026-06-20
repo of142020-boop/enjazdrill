@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    image: '/images/منشار.webp',
+    title: 'قص الخرسانة بالمنشار',
+    desc: 'تنفيذ عمليات قص الجدران والأسقف وفتح الأبواب والنوافذ بأحدث مناشير الخرسانة الألمانية بدون اهتزازات.',
+    link: '/قص-خرسانة'
+  },
+  {
+    image: '/images/كور.webp',
+    title: 'عمل فتحات بالكور',
+    desc: 'تخريم الخرسانة لعمل مسارات السباكة والكهرباء والتكييف بدقة متناهية وبدون التسبب في أي تشققات للمبنى.',
+    link: '/فتحات-كور-أكتوبر-وزايد'
+  }
+];
+---
+
+<Layout
+  title="إنجاز دريل | قص وتخريم الخرسانة في 6 أكتوبر والقاهرة"
+  description="نقدم خدمات قص وتخريم الخرسانة المسلحة، فتحات التكييف والسباكة، وتدعيم المباني في 6 أكتوبر وجميع محافظات مصر بدقة عالية وأسعار تنافسية."
+>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <span class="hero-subtitle">الخبراء في قص وتخريم الخرسانة بمصر"</span>
+    <h1 class="hero-title">ننجز مهامك الصعبة.. قص وتخريم الخرسانة بأحدث الأجهزة</h1>
+    <p class="hero-desc">
+      نقدم خدمات قص وتخريم الخرسانة المسلحة، فتحات التكييف والسباكة، وتدعيم المباني في 6 أكتوبر وجميع محافظات مصر بدقة عالية وأسعار تنافسية."
+    </p>
+    <a href="tel:+201029834485" class="btn-primary">اطلب عرض سعر الآن</a>
+  </section>
+
+  <!-- ===== QUOTE ===== -->
+  <section class="quote-section">
+    <div class="quote-text">
+      "نلتزم بتقديم أدق حلول قص وتخريم الخرسانة في مصر بأحدث المعدات الألمانية، مع ضمان السرعة والنظافة في موقع العمل"
+      <span class="quote-author">إدارة إنجاز دريل</span>
+    </div>
+    <div class="quote-icon">“</div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services-section" id="services">
+    <h2 class="section-title">خدمات قص الخرسانة وتخريم الكور</h2>
+    <div class="services-grid">
+      {services.map((service) => (
+        <div class="service-card">
+          <img src={service.image} alt={service.title} class="service-img" loading="lazy" />
+          <div class="service-content">
+            <a href={service.link} class="btn-service">تفاصيل الخدمة →</a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ===== PARTNER SECTION ===== -->
+  <section class="partner-section" style="background-color: var(--bg-hero); color: white; padding: 80px 20px; text-align: center;">
+    <h2 class="section-title" style="color: white;">إنجاز دريل: شريكك الموثوق للمهمات الصعبة</h2>
+    <p style="max-width: 800px; margin: 0 auto 30px; font-size: 18px; line-height: 1.8;">
+      "نستخدم أحدث أجهزة الكور وقص الخرسانة الألمانية لضمان عدم حدوث تصدعات أو اهتزازات بالمبنى. فريقنا جاهز للمعاينة والتنفيذ الفوري بأسعار تنافسية."
+    </p>
+    <a href="https://wa.me/201029834485" class="btn-primary" style="background-color: transparent; border: 2px solid white;">تواصل معنا واتساب →</a>
+  </section>
+
+  <!-- ===== ABOUT US SECTION ===== -->
+  <section class="about-section" style="padding: 80px 20px; background: white;">
+    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+      <h2 class="section-title">من هي شركة إنجاز دريل؟</h2>
+      <p style="max-width: 900px; margin: 0 auto 40px; font-size: 18px; line-height: 1.8; color: var(--text-muted);">
+        "نحن شركة مصرية متخصصة في تقديم حلول هندسية متكاملة لقص وتخريم الخرسانة المسلحة. انطلقنا من قلب مدينة 6 أكتوبر لنخدم كافة مناطق القاهرة والجيزة. نعتمد على أحدث تكنولوجيا 'الكور' (Core Drilling) وقص الجدران لضمان دقة الفتحات، وبدون أي اهتزازات تؤثر على سلامة المبنى، مع التزامنا التام بالمواعيد ومعايير الأمان."
+      </p>
+      <a href="/من-نحن" class="btn-primary" style="margin-bottom: 60px;">اقرأ المزيد عنا</a>
+      
+      <!-- Images Grid -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <img src="/images/outdoor-image-01.webp" alt="معدات إنجاز دريل" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" loading="lazy" />
+        <img src="/images/image-1.webp" alt="قص خرسانة" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" loading="lazy" />
+        <img src="/images/snow-1.webp" alt="عمليات التخريم" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" loading="lazy" />
+        <img src="/images/outdoor-image-04.webp" alt="تنفيذ المشاريع" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+</Layout>

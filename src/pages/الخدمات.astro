@@ -1,0 +1,139 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="الخدمات | إنجاز دريل - 01029834485" description="تعرف على خدمات إنجاز دريل في قص وتخريم الخرسانة، فتحات الكور والتكييف في 6 أكتوبر والشيخ زايد.">
+  
+  <!-- Hero -->
+  <section class="page-hero">
+    <h1>خدمات قص وتخريم الخرسانة</h1>
+  </section>
+
+  <section class="page-content">
+    
+    <!-- Intro -->
+    <div class="content-intro">
+      <h2>حلول هندسية متكاملة بأحدث المعدات</h2>
+      <div class="divider-line"></div>
+      <p>"في إنجاز دريل، لا نقدم مجرد خدمات تكسير، بل نقدم حلولاً هندسية دقيقة. نعتمد على أحدث معدات الكور والقص المستقيم لضمان الحفاظ على سلامة المبنى الإنشائية، مع سرعة التنفيذ وتسليم الموقع نظيفاً تماماً."</p>
+    </div>
+
+    <!-- Images Grid -->
+    <div class="images-2col">
+      <img src="/images/2.webp" alt="خدمات قص الخرسانة" loading="lazy" />
+      <img src="/images/image-1.webp" alt="قص خرسانة مسلحة" loading="lazy" />
+    </div>
+    <div class="images-2col" style="margin-top: 20px;">
+      <img src="/images/outdoor-image-04.webp" alt="تخريم الخرسانة" loading="lazy" />
+      <img src="/images/5.webp" alt="معدات التخريم" loading="lazy" />
+    </div>
+
+    <!-- Guarantees -->
+    <div class="two-col-section" style="margin-top: 60px;">
+      <div class="col-card">
+        <h3>ماذا نضمن لك؟</h3>
+        <div class="divider-line"></div>
+        <ul class="check-list">
+          <li>نظافة الموقع: نسلمك المكان نظيفاً تماماً من مخلفات القص والتخريم.</li>
+          <li>حماية المبنى: عمل فتحات دون أي اهتزازات أو شروخ تؤثر على الخرسانة.</li>
+          <li>دقة في المقاسات: فتحات دائرية ومستقيمة "بالمللي" حسب طلب المهندس.</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h3>لماذا تختار إنجاز دريل؟</h3>
+        <div class="divider-line"></div>
+        <ul class="check-list">
+          <li>سرعة الاستجابة: نصلك للمعاينة والتنفيذ في أسرع وقت في أكتوبر والقاهرة.</li>
+          <li>أحدث المعدات: نستخدم ماكينات ألمانية (Hilti) لضمان الدقة وعدم الإزعاج.</li>
+          <li>أسعار تنافسية: نقدم أفضل سعر للمتر الطولي مع أعلى جودة تنفيذ.</li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+</Layout>
+
+<style>
+.page-hero {
+  background-color: var(--bg-hero);
+  padding: 180px 20px 80px;
+  text-align: center;
+  color: white;
+}
+.page-hero h1 {
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 800;
+}
+.page-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+.content-intro {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.content-intro h2 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+.content-intro p {
+  font-size: 18px;
+  color: var(--text-muted);
+  max-width: 800px;
+  margin: 20px auto 0;
+  line-height: 1.8;
+}
+.divider-line {
+  width: 60px;
+  height: 3px;
+  background: var(--primary-pink);
+  margin: 16px auto;
+}
+.images-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.images-2col img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  max-height: 350px;
+}
+.two-col-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.col-card {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 30px;
+}
+.col-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 16px;
+}
+.check-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+.check-list li::before {
+  content: '— ';
+  color: var(--primary-pink);
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .images-2col, .two-col-section { grid-template-columns: 1fr; }
+}
+</style>

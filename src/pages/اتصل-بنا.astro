@@ -1,0 +1,136 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="اتصل بنا | إنجاز دريل - 01029834485" description="تواصل مع إنجاز دريل للحصول على عرض سعر فوري لخدمات قص وتخريم الخرسانة">
+
+  <section class="page-hero">
+    <h1>تواصل معنا</h1>
+  </section>
+
+  <section class="page-content">
+    <div class="contact-grid">
+      
+      <!-- Contact Form -->
+      <div class="form-section">
+        <h2>هل لديك مشروع؟ اطلب عرض سعر</h2>
+        <form class="contact-form" action="https://api.whatsapp.com/send/?phone=201029834485" method="get" target="_blank">
+          <div class="form-group">
+            <input type="text" name="your-name" placeholder="اسمك" required />
+          </div>
+          <div class="form-group">
+            <input type="email" name="your-email" placeholder="البريد الإلكتروني" />
+          </div>
+          <div class="form-group">
+            <input type="tel" name="your-phone" placeholder="رقم الهاتف" required />
+          </div>
+          <div class="form-group">
+            <textarea name="your-message" placeholder="اشرح طلبك..." rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;border:none;cursor:pointer;font-family:inherit;font-size:18px;">
+            إرسال عبر واتساب
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="info-section">
+        <h2>بيانات التواصل</h2>
+        
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div>
+            <h5>العنوان</h5>
+            <p>مدينة 6 أكتوبر</p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">📧</div>
+          <div>
+            <h5>الإيميل</h5>
+            <p><a href="mailto:info@enjazdrill.com">info@enjazdrill.com</a></p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">📞</div>
+          <div>
+            <h5>رقم الهاتف</h5>
+            <p><a href="tel:+201029834485">01029834485</a></p>
+          </div>
+        </div>
+
+        <h5 style="margin-top:30px;margin-bottom:15px;">تابعنا</h5>
+        <div class="social-links">
+          <a href="https://wa.me/201029834485" target="_blank" rel="noopener" class="social-btn whatsapp">واتساب</a>
+          <a href="tel:+201029834485" class="social-btn phone">اتصل مباشرة</a>
+        </div>
+
+        <!-- Direct WhatsApp CTA -->
+        <div style="margin-top:30px;text-align:center;">
+          <a href="https://wa.me/201029834485" target="_blank" rel="noopener">
+            <img src="/images/outdoor-image-01.webp" alt="راسلنا واتساب" style="border-radius:8px;width:100%;object-fit:cover;max-height:200px;" />
+          </a>
+          <p style="color:var(--text-muted);margin-top:10px;font-size:14px;">اضغط للتواصل عبر واتساب مباشرة</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Google Map Section -->
+  <section class="map-section" style="line-height:0;">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110532.7981504938!2d31.025381145151525!3d29.95254143243956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458514e861d8f7b%3A0xc3191f6ab0eef2a8!2zNiDYo9mD2KrZiNio2LHYjCDYp9mE2KzZitiy2Kk!5e0!3m2!1sar!2seg!4v1718818500000!5m2!1sar!2seg"
+      width="100%"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="خريطة الموقع - إنجاز دريل"
+    ></iframe>
+  </section>
+</Layout>
+
+<style>
+.page-hero {
+  background-color: var(--bg-hero);
+  padding: 180px 20px 80px;
+  text-align: center;
+  color: white;
+}
+.page-hero h1 { font-size: clamp(28px, 4vw, 52px); font-weight: 800; }
+.page-content { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+.form-section h2, .info-section h2 { font-size: 24px; font-weight: 800; margin-bottom: 24px; }
+.form-group { margin-bottom: 16px; }
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: var(--font-cairo);
+  direction: rtl;
+  outline: none;
+}
+.form-group input:focus, .form-group textarea:focus { border-color: var(--primary-pink); }
+.info-item { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 24px; }
+.info-icon { font-size: 24px; }
+.info-item h5 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+.info-item p, .info-item a { color: var(--text-muted); font-size: 15px; }
+.info-item a:hover { color: var(--primary-pink); }
+.social-links { display: flex; gap: 12px; flex-wrap: wrap; }
+.social-btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+  color: white;
+}
+.whatsapp { background: #25D366; }
+.phone { background: var(--primary-pink); }
+@media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
+</style>

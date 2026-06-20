@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="من نحن | إنجاز دريل - 01029834485" description="تعرف على فريق إنجاز دريل المتخصص في قص وتخريم الخرسانة في 6 أكتوبر والشيخ زايد.">
+  
+  <section class="page-hero">
+    <h1>شركة إنجاز دريل.. رواد قص الخرسانة في مصر</h1>
+  </section>
+
+  <section class="page-content">
+    
+    <!-- Mission -->
+    <div class="two-col-section">
+      <div>
+        <h2>رسالتنا ورؤيتنا</h2>
+        <div class="divider-line"></div>
+        <p>"نسعى لأن نكون الخيار الأول في مصر لخدمات قص وتخريم الخرسانة، من خلال تقديم حلول هندسية آمنة تحافظ على سلامة المباني، باستخدام أحدث التكنولوجيا الألمانية، مع التزامنا التام بالدقة في المواعيد والنظافة في مواقع العمل."</p>
+      </div>
+      <div>
+        <img src="/images/8.webp" alt="فريق إنجاز دريل" loading="lazy" style="width:100%;border-radius:10px;object-fit:cover;max-height:350px;" />
+      </div>
+    </div>
+
+    <!-- Why best -->
+    <div class="two-col-section" style="margin-top: 60px;">
+      <div class="col-card">
+        <h4>لماذا نحن الأفضل؟</h4>
+        <div class="divider-line"></div>
+        <p style="color:var(--text-muted);line-height:1.8;">"نمتلك خبرة طويلة في السوق المصري (أكتوبر والقاهرة)، ونفذنا مئات المشاريع السكنية والتجارية بنجاح."</p>
+      </div>
+      <div class="col-card">
+        <h4>قيمنا الأساسية</h4>
+        <div class="divider-line"></div>
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:16px;">الأمان أولاً: نلتزم بأعلى معايير السلامة المهنية للحفاظ على العمال والمبنى.</p>
+        <ul class="check-list">
+          <li>الدقة المتناهية: تنفيذ الفتحات بالمقاسات المطلوبة بدقة المليمتر.</li>
+          <li>السرعة والإنجاز: نحترم وقت العميل ونسلم الموقع في الموعد المتفق عليه.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align:center; margin-top:60px; padding:40px; background:var(--bg-hero); border-radius:12px;">
+      <h2 style="color:white;font-size:26px;margin-bottom:20px;">تواصل معنا الآن للحصول على عرض سعر</h2>
+      <a href="tel:+201029834485" class="btn-primary">اتصل بنا: 01029834485</a>
+    </div>
+
+  </section>
+</Layout>
+
+<style>
+.page-hero {
+  background-color: var(--bg-hero);
+  padding: 180px 20px 80px;
+  text-align: center;
+  color: white;
+}
+.page-hero h1 { font-size: clamp(24px, 3.5vw, 46px); font-weight: 800; }
+.page-content { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+.divider-line { width: 60px; height: 3px; background: var(--primary-pink); margin: 16px 0; }
+.two-col-section { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.two-col-section p { color: var(--text-muted); font-size: 17px; line-height: 1.8; margin-top: 16px; }
+.two-col-section h2 { font-size: 28px; font-weight: 800; }
+.col-card { background: #f9f9f9; border-radius: 10px; padding: 30px; }
+.col-card h4 { font-size: 20px; font-weight: 700; }
+.check-list { list-style: none; padding: 0; margin-top: 12px; }
+.check-list li { padding: 8px 0; border-bottom: 1px solid #eee; color: var(--text-muted); font-size: 15px; }
+.check-list li::before { content: '— '; color: var(--primary-pink); font-weight: bold; }
+@media (max-width: 768px) { .two-col-section { grid-template-columns: 1fr; } }
+</style>

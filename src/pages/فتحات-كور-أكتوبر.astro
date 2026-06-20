@@ -1,0 +1,206 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqs = [
+  {
+    q: 'هل يمكن عمل فتحات في الكمرات (الجسور)؟',
+    a: 'نعم، تقنياً يمكن ذلك. ولكن هندسياً، ننصح دائماً بالابتعاد عن منتصف الكمرة وعن الحديد السفلي. نحن نعمل بالتنسيق مع المهندس المسؤول لتحديد المنطقة الآمنة.',
+  },
+  {
+    q: 'هل تسبب الماكينة غرق المكان بالمياه؟',
+    a: 'إطلاقاً. نحن نستخدم كمية مياه محسوبة للتبريد، ولدينا طرق احترافية لتجميع المياه الناتجة أو استخدام أجهزة شفط، مما يجعلنا الخيار الأفضل للشقق المفروشة.',
+  },
+  {
+    q: 'ما هي أسعار فتحات الكور لديكم؟',
+    a: 'تختلف الأسعار بناءً على قطر الفتحة وسُمك الجدار وعدد الفتحات. اتصل بنا على 01029834485 للحصول على عرض سعر فوري ومنافس.',
+  },
+  {
+    q: 'هل يؤثر عمل فتحات كور على سلامة المبنى؟',
+    a: 'لا، لأننا نستخدم ماكينة كور تعمل بنظام الدوران والقص بالماس دون إحداث أي اهتزازات أو تصدعات مثل التكسير اليدوي.',
+  },
+  {
+    q: 'ما هي المناطق التي تخدمونها في أكتوبر؟',
+    a: 'نخدم جميع مراحل وأحياء مدينة 6 أكتوبر، الشيخ زايد، حدائق أكتوبر، والقرية الذكية. اتصل بنا لتحديد الموعد.',
+  },
+];
+
+const uses = [
+  { icon: '❄️', title: 'تكييف سبليت وشباك', desc: 'فتحات دقيقة بجميع الأقطار المطلوبة لوحدات التكييف' },
+  { icon: '🚿', title: 'مواسير الصرف الصحي', desc: 'مجاري الصرف والمياه في الحمامات والمطابخ' },
+  { icon: '🔥', title: 'خطوط الغاز الطبيعي', desc: 'فتحات آمنة لمرور أنابيب الغاز الطبيعي' },
+  { icon: '🌬️', title: 'تهوية ومداخن', desc: 'مداخن الشفاطات وفتحات التهوية بالأسقف والجدران' },
+  { icon: '⚡', title: 'قنوات الكهرباء', desc: 'فتحات لتمرير كابلات الكهرباء والشبكات' },
+  { icon: '📡', title: 'شبكات الاتصالات', desc: 'أسلاك الإنترنت والكاميرات والأنظمة الأمنية' },
+];
+---
+
+<Layout
+  title="فتحات كور - تخريم خرسانة أكتوبر وزايد | 01029834485"
+  description="هل تبحث عن عمل فتحات كور نظيفة؟ إنجاز دريل أفضل شركات تخريم الخرسانة بالكور في أكتوبر وزايد لعمل فتحات الغاز، السباكة، والمداخن. اطلب المعاينة: 01029834485"
+  canonical="https://enjazdrill.com/فتحات-كور-أكتوبر"
+>
+
+  <!-- Hero -->
+  <section class="section" style="background:var(--dark); padding-top:140px;">
+    <div class="container">
+      <div style="max-width:800px; margin:0 auto; text-align:center;">
+        <nav aria-label="breadcrumb" style="margin-bottom:24px;">
+          <ol style="display:flex; gap:8px; align-items:center; justify-content:center; font-size:14px; color:var(--text-muted); list-style:none; flex-wrap:wrap;">
+            <li><a href="/" style="color:var(--accent);">الرئيسية</a></li>
+            <li style="color:var(--border);">›</li>
+            <li style="color:var(--text-muted);">فتحات كور أكتوبر</li>
+          </ol>
+        </nav>
+
+        <span class="section-tag">تخريم الخرسانة</span>
+        <h1 class="section-title" style="margin-top:16px;">
+          فتحات كور في <span>6 أكتوبر</span> والشيخ زايد
+        </h1>
+        <div class="divider"></div>
+        <p class="section-subtitle" style="margin-top:20px;">
+          إنجاز دريل — أفضل شركة كور في مصر لعمل فتحات الغاز، السباكة، التكييف، والمداخن بدون تكسير أو اهتزازات. أحدث معدات ألمانية وفريق متخصص على أعلى مستوى.
+        </p>
+
+        <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:36px;">
+          <a href="tel:+201029834485" class="btn btn-accent" id="core-page-call-btn">📞 01029834485</a>
+          <a href="https://wa.me/201029834485?text=أريد الاستفسار عن فتحات كور في أكتوبر"
+             class="btn btn-whatsapp"
+             target="_blank"
+             rel="noopener noreferrer">
+            💬 اطلب معاينة
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What is Core Drilling -->
+  <section class="section" style="background:var(--dark-2);">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;">
+        <div>
+          <span class="section-tag">ما هو الكور؟</span>
+          <h2 class="section-title" style="text-align:right; margin-top:16px;">
+            تخريم الخرسانة<br><span>بالماكينة الألمانية</span>
+          </h2>
+          <div class="divider" style="margin:16px 0;"></div>
+          <p style="color:var(--text-muted); line-height:1.9; font-size:16px; margin-bottom:16px;">
+            الكور أو Core Drilling هو تقنية حديثة لعمل فتحات دائرية مثالية في الخرسانة المسلحة والجدران الطوبية باستخدام ماكينة دوارة مزودة بتاج ماسي.
+          </p>
+          <p style="color:var(--text-muted); line-height:1.9; font-size:16px; margin-bottom:24px;">
+            الميزة الكبرى لهذه التقنية أنها لا تُحدث أي اهتزازات أو تشقيقات في الجدران المجاورة، وتُنتج فتحة نظيفة ودقيقة جاهزة للاستخدام الفوري.
+          </p>
+
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            {[
+              '✅ بدون اهتزازات أو تشقيق',
+              '✅ فتحات دقيقة ومستديرة 100%',
+              '✅ مناسبة للشقق المفروشة والمؤثثة',
+              '✅ تنظيف تام بعد الانتهاء',
+              '✅ أسرع وأنظف من الشاكوش',
+            ].map(item => (
+              <div style="display:flex; align-items:center; gap:12px; background:var(--dark-3); padding:12px 16px; border-radius:8px; border:1px solid var(--border);">
+                <span style="font-size:14px; color:var(--text-muted);">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <img
+            src="/images/9.webp"
+            alt="ماكينة كور تخريم خرسانة إنجاز دريل"
+            style="border-radius:var(--radius-lg); width:100%; object-fit:cover; box-shadow:var(--shadow-lg);"
+            loading="lazy"
+            width="560"
+            height="480"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Uses -->
+  <section class="section" style="background:var(--dark);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">استخدامات الكور</span>
+        <h2 class="section-title">فتحات كور لـ<span>كل الاحتياجات</span></h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">نُنفذ فتحات كور بجميع الأقطار لأي غرض تحتاجه في مسكنك أو منشأتك</p>
+      </div>
+
+      <div class="services-grid">
+        {uses.map(use => (
+          <div class="service-card" style="text-decoration:none; display:block; cursor:default;">
+            <div class="service-icon">{use.icon}</div>
+            <h3 class="service-title">{use.title}</h3>
+            <p class="service-desc">{use.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema for this page -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  })} />
+
+  <!-- FAQ -->
+  <section class="section faq" style="background:var(--dark-2);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">الأسئلة الشائعة</span>
+        <h2 class="section-title">أسئلة حول <span>فتحات الكور</span></h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="faq-list">
+        {faqs.map((faq, i) => (
+          <div class={`faq-item${i === 0 ? ' open' : ''}`}>
+            <button class="faq-question">
+              <span>{faq.q}</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">{faq.a}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-inner">
+        <h2 class="cta-title">احصل على معاينة مجانية<br>في 6 أكتوبر والشيخ زايد</h2>
+        <p class="cta-desc">
+          اتصل بنا الآن وسيصلك أحد خبرائنا في أقرب وقت لمعاينة الموقع وتقديم عرض سعر تفصيلي مجاني.
+        </p>
+        <div class="cta-btns">
+          <a href="tel:+201029834485" class="btn btn-accent" style="font-size:18px; padding:18px 40px;">
+            📞 01029834485
+          </a>
+          <a href="https://wa.me/201029834485?text=أريد معاينة فتحات كور في أكتوبر"
+             class="btn btn-whatsapp"
+             style="font-size:18px; padding:18px 40px;"
+             target="_blank"
+             rel="noopener noreferrer">
+            💬 واتساب
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>

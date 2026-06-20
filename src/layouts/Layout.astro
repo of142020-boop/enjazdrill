@@ -1,0 +1,154 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  navbarStyle?: 'transparent' | 'solid';
+}
+
+const { title, description, canonical, navbarStyle = 'transparent' } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: '/', label: 'الصفحة الرئيسية' },
+  { href: '/من-نحن', label: 'من نحن' },
+  { href: '/الخدمات', label: 'الخدمات' },
+  { href: '/projects', label: 'المشاريع' },
+  { href: '/فتحات-كور-أكتوبر-وزايد', label: 'فتحات كور اكتوبر' },
+  { href: '/قص-خرسانة', label: 'قص الخرسانة' },
+  { href: '/اتصل-بنا', label: 'اتصل بنا' },
+];
+---
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta name="robots" content="index, follow" />
+    <meta name="google-site-verification" content="Asin_-3ooCxxhMdRcLj4tTY-TBWNtdvkuQyW2JBxXTg" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description || title} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:site_name" content="إنجاز دريل - لقص وتخريم الخرسانة" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description || title} />
+
+    <!-- Schema Markup (JSON-LD) for Local SEO -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "إنجاز دريل لقص وتخريم الخرسانة",
+      "image": "https://enjazdrill.com/images/outdoor-image-01.webp",
+      "@id": "https://enjazdrill.com",
+      "url": "https://enjazdrill.com",
+      "telephone": "+201029834485",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "6 أكتوبر",
+        "addressRegion": "الجيزة",
+        "addressCountry": "EG"
+      },
+      "areaServed": ["6 أكتوبر", "الشيخ زايد", "القاهرة", "الجيزة", "حدائق أكتوبر"],
+      "priceRange": "$$"
+    })} />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class={`navbar ${navbarStyle === 'solid' ? 'navbar-solid' : ''}`} id="navbar">
+      <div class="nav-container">
+        <div class="mobile-toggle" id="mobile-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="nav-menu" id="nav-menu">
+          {navLinks.map(link => (
+            <a
+              href={link.href}
+              class={`nav-link${currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href)) ? ' active' : ''}`}
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <h4>إنجاز دريل</h4>
+          <p>الخبراء في قص وتخريم الخرسانة بمصر. نقدم حلولاً هندسية متكاملة بأحدث المعدات الألمانية.</p>
+        </div>
+        <div class="footer-col">
+          <h4>روابط سريعة</h4>
+          <ul>
+            {navLinks.map(link => (
+              <li><a href={link.href}>{link.label}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>تواصل معنا</h4>
+          <p>📍 مدينة 6 أكتوبر</p>
+          <p>📞 <a href="tel:+201029834485">01029834485</a></p>
+          <p>📧 <a href="mailto:info@enjazdrill.com">info@enjazdrill.com</a></p>
+          <div style="margin-top: 16px;">
+            <a href="https://wa.me/201029834485" target="_blank" rel="noopener" class="footer-wa-btn">واتساب مباشر</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© {new Date().getFullYear()} إنجاز دريل. جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/201029834485" class="floating-btn floating-wa" target="_blank" rel="noopener noreferrer" aria-label="واتساب">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.487-1.761-1.663-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+      </svg>
+    </a>
+
+    <!-- Floating Call -->
+    <a href="tel:+201029834485" class="floating-btn floating-call" aria-label="اتصال">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      </svg>
+    </a>
+
+    <!-- Scroll & Mobile Menu script -->
+    <script>
+      const navbar = document.getElementById('navbar');
+      const mobileToggle = document.getElementById('mobile-toggle');
+      const navMenu = document.getElementById('nav-menu');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar?.classList.add('scrolled');
+        } else {
+          navbar?.classList.remove('scrolled');
+        }
+      });
+
+      mobileToggle?.addEventListener('click', () => {
+        mobileToggle.classList.toggle('active');
+        navMenu?.classList.toggle('active');
+      });
+    </script>
+  </body>
+</html>

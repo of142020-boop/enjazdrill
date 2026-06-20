@@ -345,7 +345,7 @@ img { max-width: 100%; height: auto; }
 ========================================= */
 .site-footer {
   background-color: #2a2a2a;
-  color: #ccc;
+  color: #ffffff;
   padding: 60px 20px 0;
 }
 
@@ -359,7 +359,7 @@ img { max-width: 100%; height: auto; }
   border-bottom: 1px solid #444;
 }
 
-.footer-col h4 {
+.footer-col .footer-heading {
   color: white;
   font-size: 18px;
   font-weight: 700;
@@ -368,7 +368,7 @@ img { max-width: 100%; height: auto; }
   padding-bottom: 10px;
 }
 
-.footer-col h4::after {
+.footer-col .footer-heading::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -390,7 +390,7 @@ img { max-width: 100%; height: auto; }
 
 .footer-col ul li a {
   font-size: 14px;
-  color: #bbb;
+  color: #eeeeee;
   transition: color 0.2s;
 }
 

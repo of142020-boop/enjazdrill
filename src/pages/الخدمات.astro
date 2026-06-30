@@ -49,7 +49,31 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
 
-  </section>
+    <!-- Services Hub Cards -->
+    <div style="margin-top: 60px;">
+      <h2 style="font-size:26px; font-weight:800; margin-bottom:24px; text-align:center;">جميع خدماتنا في أكتوبر وزايد</h2>
+      <div class="all-services-grid">
+        <a href="/قص-خرسانة" class="srv-hub-card">
+          <div class="srv-hub-icon">🪚</div>
+          <h3>قص الخرسانة بالمنشار</h3>
+          <p>فتح الأبواب والنوافذ في الجدران الحاملة وأعمال قص الأسقف بدون اهتزازات أو تشققات.</p>
+          <span class="srv-hub-link">تفاصيل الخدمة ←</span>
+        </a>
+        <a href="/فتحات-كور-أكتوبر-وزايد" class="srv-hub-card">
+          <div class="srv-hub-icon">🔩</div>
+          <h3>فتحات كور – تخريم الخرسانة</h3>
+          <p>تخريم دقيق للسباكة والغاز والتكييف ومداخن الشفاطات بتقنية Core Drilling.</p>
+          <span class="srv-hub-link">تفاصيل الخدمة ←</span>
+        </a>
+        <a href="/تركيب-شفاط-المطبخ" class="srv-hub-card">
+          <div class="srv-hub-icon">🍳</div>
+          <h3>تركيب شفاط المطبخ وتأسيسه</h3>
+          <p>تركيب جميع أنواع الشفاطات بمدخنة أو بدون، مع تأسيس الفتحات الخرسانية.</p>
+          <span class="srv-hub-link">تفاصيل الخدمة ←</span>
+        </a>
+      </div>
+    </div>
+
 </Layout>
 
 <style>
@@ -135,5 +159,48 @@ import Layout from '../layouts/Layout.astro';
 }
 @media (max-width: 768px) {
   .images-2col, .two-col-section { grid-template-columns: 1fr; }
+}
+.all-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 16px;
+}
+.srv-hub-card {
+  display: block;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 28px 22px;
+  text-decoration: none;
+  color: #222;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.2s;
+}
+.srv-hub-card:hover {
+  border-color: #1a1a2e;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+}
+.srv-hub-icon { font-size: 32px; margin-bottom: 12px; }
+.srv-hub-card h3 { font-size: 17px; font-weight: 800; margin-bottom: 10px; color: #1a1a2e; }
+.srv-hub-card p { font-size: 14px; color: #666; line-height: 1.6; margin-bottom: 14px; }
+.srv-hub-link { font-size: 14px; font-weight: 700; color: #1a1a2e; }
+@media (max-width: 768px) {
+  .all-services-grid { grid-template-columns: 1fr; }
+}
+.hood-btn {
+  display: inline-block;
+  padding: 13px 28px;
+  background: #1a1a2e;
+  color: #fff;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
+.hood-btn:hover {
+  background: #2d2d50;
+  transform: translateY(-2px);
 }
 </style>

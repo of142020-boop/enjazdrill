@@ -45,6 +45,34 @@ import Layout from '../layouts/Layout.astro';
       <a href="tel:+201029834485" class="btn-primary">اتصل بنا: 01029834485</a>
     </div>
 
+    <!-- Internal Links to Services -->
+    <div style="margin-top:60px;">
+      <h2 style="font-size:24px; font-weight:800; margin-bottom:20px;">خدماتنا المتخصصة في أكتوبر وزايد</h2>
+      <div class="services-links-grid">
+        <a href="/قص-خرسانة" class="srv-link-card">
+          <span style="font-size:26px;">🪚</span>
+          <div>
+            <strong>قص الخرسانة بالمنشار</strong>
+            <p>فتح الأبواب والنوافذ والأسقف بدون اهتزازات</p>
+          </div>
+        </a>
+        <a href="/فتحات-كور-أكتوبر-وزايد" class="srv-link-card">
+          <span style="font-size:26px;">🔩</span>
+          <div>
+            <strong>فتحات كور – تخريم الخرسانة</strong>
+            <p>مداخن وسباكة وتكييف بدقة مليمترية</p>
+          </div>
+        </a>
+        <a href="/تركيب-شفاط-المطبخ" class="srv-link-card">
+          <span style="font-size:26px;">🍳</span>
+          <div>
+            <strong>تركيب شفاط المطبخ وتأسيسه</strong>
+            <p>تركيب بمدخنة أو بدون في أكتوبر وزايد</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
   </section>
 </Layout>
 
@@ -67,4 +95,30 @@ import Layout from '../layouts/Layout.astro';
 .check-list li { padding: 8px 0; border-bottom: 1px solid #eee; color: var(--text-muted); font-size: 15px; }
 .check-list li::before { content: '— '; color: var(--primary-pink); font-weight: bold; }
 @media (max-width: 768px) { .two-col-section { grid-template-columns: 1fr; } }
+.services-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+.srv-link-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 20px;
+  text-decoration: none;
+  color: #222;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.2s;
+}
+.srv-link-card:hover {
+  border-color: var(--primary-pink, #1a1a2e);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.09);
+  transform: translateY(-2px);
+}
+.srv-link-card strong { display: block; font-size: 15px; font-weight: 700; margin-bottom: 5px; }
+.srv-link-card p { font-size: 13px; color: #666; line-height: 1.5; margin: 0; }
+@media (max-width: 768px) { .services-links-grid { grid-template-columns: 1fr; } }
 </style>

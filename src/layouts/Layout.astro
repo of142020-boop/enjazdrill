@@ -10,9 +10,10 @@ interface Props {
   description?: string;
   canonical?: string;
   navbarStyle?: 'transparent' | 'solid';
+  ogImage?: string;
 }
 
-const { title, description, canonical, navbarStyle = 'transparent' } = Astro.props;
+const { title, description, canonical, navbarStyle = 'transparent', ogImage = '/images/مخلفات-قص-وتخريم.webp' } = Astro.props;
 const currentPath = Astro.url.pathname;
 
 const navLinks = [
@@ -42,7 +43,7 @@ const navLinks = [
     <meta property="og:description" content={description || title} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical || Astro.url} />
-    <meta property="og:image" content="https://enjazdrill.com/images/outdoor-image-01.webp" />
+    <meta property="og:image" content={`https://enjazdrill.com${ogImage}`} />
     <meta property="og:image:width" content="644" />
     <meta property="og:image:height" content="402" />
     <meta property="og:image:alt" content="إنجاز دريل - قص وتخريم الخرسانة في 6 أكتوبر" />
@@ -51,7 +52,7 @@ const navLinks = [
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description || title} />
-    <meta name="twitter:image" content="https://enjazdrill.com/images/outdoor-image-01.webp" />
+    <meta name="twitter:image" content={`https://enjazdrill.com${ogImage}`} />
 
     <!-- Schema Markup (JSON-LD) for Local SEO & AI -->
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -60,7 +61,7 @@ const navLinks = [
       "name": "إنجاز دريل لقص وتخريم الخرسانة",
       "alternateName": "Enjaz Drill",
       "description": "شركة متخصصة في قص وتخريم الخرسانة المسلحة بأحدث المعدات الألمانية. نعمل في مدينة 6 أكتوبر والشيخ زايد والقاهرة.",
-      "image": "https://enjazdrill.com/images/outdoor-image-01.webp",
+      "image": `https://enjazdrill.com${ogImage}`,
       "@id": "https://enjazdrill.com",
       "url": "https://enjazdrill.com",
       "telephone": "+201029834485",

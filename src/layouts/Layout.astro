@@ -11,9 +11,10 @@ interface Props {
   canonical?: string;
   navbarStyle?: 'transparent' | 'solid';
   ogImage?: string;
+  noindex?: boolean;
 }
 
-const { title, description, canonical, navbarStyle = 'transparent', ogImage = '/images/مخلفات-قص-وتخريم.webp' } = Astro.props;
+const { title, description, canonical, navbarStyle = 'transparent', ogImage = '/images/مخلفات-قص-وتخريم.webp', noindex = false } = Astro.props;
 const currentPath = Astro.url.pathname;
 
 const navLinks = [
@@ -37,7 +38,7 @@ const navLinks = [
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
     {canonical && <link rel="canonical" href={canonical} />}
-    <meta name="robots" content="index, follow" />
+    {noindex ? <meta name="robots" content="noindex, nofollow" /> : <meta name="robots" content="index, follow" />}
     <meta name="google-site-verification" content="Asin_-3ooCxxhMdRcLj4tTY-TBWNtdvkuQyW2JBxXTg" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description || title} />

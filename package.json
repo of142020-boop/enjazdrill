@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "prebuild": "node scripts/prepare-images.mjs",
+    "predev": "node scripts/prepare-images.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",

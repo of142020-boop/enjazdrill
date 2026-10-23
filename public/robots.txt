@@ -23,4 +23,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://enjazdrill.com/sitemap.xml
+Sitemap: https://enjazdrill.com/sitemap-index.xml

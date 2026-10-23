@@ -1,0 +1,24 @@
+---
+interface Props { light?: boolean }
+const { light = false } = Astro.props;
+---
+<span class:list={['enjaz-logo', { 'enjaz-logo-light': light }]} aria-hidden="true">
+ <svg class="enjaz-symbol" viewBox="0 0 96 96" width="52" height="52" focusable="false">
+  <path fill="#173b37" d="M20 4h49l23 23v49a16 16 0 0 1-16 16H20A16 16 0 0 1 4 76V20A16 16 0 0 1 20 4Z"/>
+  <circle cx="48" cy="48" r="26" fill="none" stroke="#fafaf6" stroke-width="9"/>
+  <path d="M48 22a26 26 0 0 1 26 26" fill="none" stroke="#df985c" stroke-width="9"/>
+  <path d="m24 72 48-48" fill="none" stroke="#173b37" stroke-width="15"/>
+  <path d="m23 73 50-50" fill="none" stroke="#df985c" stroke-width="6"/>
+  <path d="M43 48h10M48 43v10" stroke="#fafaf6" stroke-width="3"/>
+ </svg>
+ <span class="enjaz-wordmark"><span class="enjaz-arabic">إنجاز دريل</span><span class="enjaz-english" lang="en" dir="ltr">ENJAZ DRILL</span></span>
+</span>
+<style>
+.enjaz-logo{display:inline-flex;align-items:center;gap:11px;color:#173b37;direction:rtl;vertical-align:middle;word-spacing:normal;flex-shrink:0}
+.enjaz-symbol{display:block;flex:0 0 auto;width:52px;height:52px}
+.enjaz-wordmark{display:flex;flex-direction:column;gap:5px}
+.enjaz-arabic{font-family:'Cairo',sans-serif;font-size:27px;font-weight:800;line-height:1.3;letter-spacing:normal;word-spacing:normal;white-space:nowrap}
+.enjaz-english{font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:2.7px;line-height:1.4;color:#63716c;white-space:nowrap}
+.enjaz-logo-light{color:#fafaf6}.enjaz-logo-light .enjaz-english{color:#d2b494}
+@media(max-width:600px){.enjaz-symbol{width:44px;height:44px}.enjaz-arabic{font-size:24px}.enjaz-english{font-size:9px;letter-spacing:2px}.enjaz-logo{gap:9px}}
+</style>

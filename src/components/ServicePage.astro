@@ -1,0 +1,30 @@
+---
+import SiteImage from './SiteImage.astro';
+import Layout from '../layouts/Layout.astro';
+import HoodGuide from './HoodGuide.astro';
+import SawGuide from './SawGuide.astro';
+import CoreGuide from './CoreGuide.astro';
+import { services } from '../data/services';
+interface Props { service: typeof services[number] }
+const { service: s } = Astro.props;
+const url = new URL(`/${s.slug}/`, 'https://enjazdrill.com').href;
+---
+<Layout title={`${s.title} | إنجاز دريل`} description={s.description} canonical={url} ogImage={`/images/${s.image}`}>
+ <script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'Service','@id':`${url}#service`,name:s.title,description:s.description,url,provider:{'@id':'https://enjazdrill.com/#business'},areaServed:{'@type':'Country',name:'Egypt'}})}/>
+ <article class="home-wrap home-section service-article">
+  <nav aria-label="مسار الصفحة"><a href="/">الرئيسية</a> / <a href="/الخدمات/">الخدمات</a> / <span>{s.title}</span></nav>
+  <h1>{s.title} <bdi class="heading-phone">| 01029834485</bdi></h1><p class="section-intro">{s.intro}</p>
+  <SiteImage class="service-cover" src={`/images/${s.image}`} alt={s.title} width="1200" height="800" fetchpriority="high"/>
+  {s.slug === 'تركيب-شفاط-المطبخ' && <HoodGuide />}
+  {s.slug === 'قص-خرسانة' && <SawGuide />}
+  {s.slug === 'فتحات-كور-أكتوبر-وزايد' && <CoreGuide />}
+  <h2>أسئلة عن {s.title}</h2>{s.faq.map(([q,a])=><details class="faq-accordion"><summary>{q}</summary><p class="faq-content">{a}</p></details>)}
+  <p><a href="/مناطق-الخدمة/">مناطق الخدمة وتجهيز الزيارة في أكتوبر وزايد والقاهرة والجيزة</a></p>
+  {s.slug !== 'تركيب-شفاط-المطبخ' && <p>ننفذ هذه الخدمة في جميع محافظات مصر. <a href="/المحافظات/">اختر محافظتك لتنسيق الانتقال وطلب السعر</a>.</p>}<h2>خدمات مرتبطة</h2><ul>{services.filter(x=>x.slug!==s.slug).map(x=><li><a href={`/${x.slug}/`}>{x.title}</a></li>)}</ul>
+  <p><a href="/projects/">شاهد صور الأعمال والمعدات</a> · <a href="/اتصل-بنا/">أرسل تفاصيل المشروع</a></p>
+  <a class="btn-primary" href={`https://wa.me/201029834485?text=${encodeURIComponent(`أريد عرض سعر: ${s.title}`)}`}>اطلب عرض سعر عبر واتساب</a>
+ </article>
+</Layout>
+<style>
+.service-article{max-width:900px}.service-article nav{font-size:13px;color:#63716c}.service-article h1{font-size:clamp(28px,4vw,46px);line-height:1.6;margin:24px 0}.service-article h2{font-size:25px;margin:34px 0 16px}.service-article p,.service-article li{line-height:2.1;margin-bottom:14px}.service-article ul{list-style:disc;padding-inline-start:24px}.service-article p a,.service-article li a{text-decoration:underline;text-underline-offset:5px}.service-cover{width:100%;height:auto;max-height:440px;object-fit:cover;border-radius:8px;aspect-ratio:3/2}.service-article .btn-primary{margin-top:24px}
+</style>

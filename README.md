@@ -1,43 +1,35 @@
-# Astro Starter Kit: Minimal
+# إنجاز دريل
+
+موقع عربي مبني بـAstro لخدمات قص الخرسانة والكور وتركيب الشفاطات، مع دليل وصفحات لجميع محافظات مصر. صفحات المحافظات تستهدف الكور والقص فقط.
+
+## التشغيل والبناء
 
 ```sh
-npm create astro@latest -- --template minimal
+npm ci
+npm run dev
+npm run build
+npm run preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+يتولى `predev` و`prebuild` إعداد أبعاد الصور ونسخ WebP المتجاوبة من الصور الموجودة داخل `public/images`.
 
-## 🚀 Project Structure
+## التحقق
 
-Inside of your Astro project, you'll see the following folders and files:
+بعد البناء، يمكن تشغيل الفحوص التالية باستخدام Python 3:
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```sh
+python scripts/check-seo.py
+python scripts/check-governorate-content.py
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+فحص التشابه يقيس التكرار النصي فقط، ولا يتنبأ بترتيب البحث. تفاصيل النشر والقياس والمتابعة في `docs/local-seo-rollout.md`.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## إعداد النشر
 
-Any static assets, like images, can be placed in the `public/` directory.
+- أمر البناء: `npm run build`.
+- مجلد الناتج: `dist`.
+- النطاق المضبوط: `https://enjazdrill.com`.
+- خريطة الموقع: `/sitemap-index.xml`.
+- شعار الموقع وملفات الأيقونات: `public/brand`.
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+رفع الكود إلى GitHub لا يؤكد نشر الموقع؛ يلزم وجود استضافة أو مسار نشر مرتبط بالمستودع. لا يوجد Analytics فعال حتى ربط معرّف وحساب القياس المناسبين.

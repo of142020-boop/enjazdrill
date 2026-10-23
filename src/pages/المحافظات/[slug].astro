@@ -1,0 +1,49 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteImage from '../../components/SiteImage.astro';
+import { governorates } from '../../data/governorates';
+import { governorateEditorial } from '../../data/governorate-editorial';
+export function getStaticPaths(){return governorates.map(g=>({params:{slug:g.name},props:{g}}));}
+const {g}=Astro.props;
+const content = governorateEditorial[g.name];
+if (!content) throw new Error(`Missing governorate editorial: ${g.name}`);
+const description = `${content.intro.split('،')[0].split('؛')[0]} تواصل مع إنجاز دريل: 01029834485.`;
+const url=new URL(`/المحافظات/${g.name}/`,'https://enjazdrill.com').href;
+const wa=`https://wa.me/201029834485?text=${encodeURIComponent(`أريد عرض سعر في محافظة ${g.label}. المدينة أو القرية: \nالخدمة والمقاسات: `)}`;
+---
+<Layout ogImage="/images/تخريم-خرسانة-كور.webp" title={`صنايعي كور وقص خرسانة في ${g.label} | إنجاز دريل`} description={description} canonical={url}>
+<script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'Service',name:`قص وتخريم الخرسانة في ${g.label}`,url,image:['https://enjazdrill.com/images/تخريم-خرسانة-كور.webp','https://enjazdrill.com/images/منشار-قص-الجدران.webp'],areaServed:{'@type':'AdministrativeArea',name:g.label},provider:{'@id':'https://enjazdrill.com/#business'}})}/>
+<script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'الرئيسية',item:'https://enjazdrill.com/'},{'@type':'ListItem',position:2,name:'المحافظات',item:'https://enjazdrill.com/'+encodeURIComponent('المحافظات')+'/'},{'@type':'ListItem',position:3,name:g.label,item:url}]})}/>
+<article data-governorate={g.label} class="home-wrap home-section local-page"><nav aria-label="مسار الصفحة"><a href="/">الرئيسية</a> / <a href="/المحافظات/">المحافظات</a> / {g.label}</nav>
+<h1>قص وتخريم الخرسانة وفتحات الكور في {g.label} <bdi class="heading-phone">| 01029834485</bdi></h1>
+<p class="local-intro">{content.intro}</p>
+<div class="local-actions"><a class="btn-primary" href={wa}>ناقش طلبك في {g.label}</a><a class="local-phone" href="tel:+201029834485"><span>اتصل:</span><bdi>01029834485</bdi></a></div>
+<nav class="article-contents" aria-label="محتويات الصفحة">{content.sections.map((section,index)=><a href={`#section-${index+1}`}>{section.heading}</a>)}</nav>
+{content.sections.map((section,index)=><section id={`section-${index+1}`}><h2>{section.heading}</h2><p>{section.text}</p>{index === 0 && <figure class="local-photo"><SiteImage src="/images/تخريم-خرسانة-كور.webp" alt="ماكينة كور مثبتة لتخريم فتحة دائرية في جدار خرساني" loading="lazy" sizes="(max-width: 600px) calc(100vw - 40px), 760px"/><figcaption>تخريم الخرسانة بالكور — صورة من مكتبة الموقع لتوضيح الخدمة، وليست توثيقًا لمشروع في {g.label}.</figcaption></figure>}{index === 2 && <figure class="local-photo"><SiteImage src="/images/منشار-قص-الجدران.webp" alt="منشار جداري بشفرة دائرية لقص الخرسانة" loading="lazy" sizes="(max-width: 600px) calc(100vw - 40px), 760px"/><figcaption>منشار قص الجدران — صورة توضيحية من الصور المتاحة، ولا تنسب إلى موقع تنفيذ داخل المحافظة.</figcaption></figure>}</section>)}
+<aside class="local-checklist"><h2>جهّز هذه البيانات لطلبك</h2><ul>{content.checklist.map(item=><li>{item}</li>)}</ul><p><a href="/اسعار-قص-وتخريم-الخرسانة/">راجع عوامل التسعير وما ينبغي أن يشمله عرض العمل ←</a></p></aside>
+<section><h2>تنسيق التغطية داخل {g.label}</h2><p>{g.note}</p><p>نستقبل طلبات من {g.places} وغيرها من مدن وقرى المحافظة. قبول الخدمة يشمل الفتحة الواحدة والمشروعات؛ يُحدد الانتقال والموعد والسعر بعد مراجعة موقعك. صفحة التغطية لا تعني وجود فرع محلي.</p></section>
+<section><h2>إجابة تساعدك قبل الحجز</h2><details class="faq-accordion"><summary>{content.question}</summary><p class="faq-content">{content.answer}</p></details></section>
+<section class="local-resources"><h2>تفاصيل الخدمة الفنية</h2><p>اختر الدليل المرتبط بمهمتك لمراجعة الاستخدامات والمقاسات والتجهيزات.</p><ul><li><a href="/فتحات-كور-أكتوبر-وزايد/">فتحات الكور وتخريم الخرسانة</a></li><li><a href="/قص-خرسانة/">قص الجدران والأسقف بالمنشار</a></li></ul></section>
+<p><a href="/المحافظات/">استعرض جميع المحافظات ومناطق التنفيذ ←</a></p>
+<div class="local-actions"><a class="btn-primary" href={wa}>أرسل طلبك في {g.label}</a><a class="local-phone" href="tel:+201029834485"><span>اتصل:</span><bdi>01029834485</bdi></a></div>
+</article></Layout>
+<style>
+.local-page{max-width:1000px;min-width:0;line-height:2.2;overflow-wrap:break-word}
+.local-page h1{font-size:clamp(28px,4vw,44px);line-height:1.85;margin:24px 0 30px}
+.local-page h1 .heading-phone{display:block;margin-top:10px;line-height:1.6}
+.local-page h2{font-size:26px;line-height:1.85;margin-bottom:18px}
+.local-page p{margin:18px 0;color:#53675c;line-height:2.2}
+.local-page section{margin:40px 0;scroll-margin-top:110px}
+.local-page section a,.local-checklist a{text-decoration:underline}
+.local-page .btn-primary{margin:12px 0}
+.local-intro{font-size:18px}
+.local-actions{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center}
+.local-phone{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;line-height:1.8;padding-block:10px}
+.article-contents{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-block:24px;border-bottom:1px solid #dce1d3}
+.article-contents a{display:block;min-width:0;white-space:normal;font-size:14px;line-height:1.9;background:#eef0e7;padding:12px 16px;border-radius:5px}
+.local-checklist{padding:26px;background:#eef0e7;border-radius:8px}
+.local-checklist ul,.local-resources ul{list-style:disc;padding-inline-start:24px;margin-block:16px}
+.local-checklist li,.local-resources li{line-height:2.1;margin:10px 0;padding-block:4px}
+@media(max-width:600px){.local-page{width:calc(100% - 40px)}.local-page h1{font-size:28px}.local-page h2{font-size:23px}.local-page .local-intro{font-size:16px}.article-contents{grid-template-columns:1fr}.local-checklist{padding:20px}}
+.local-photo{margin:28px auto;max-width:760px;border:1px solid #dce1d3;border-radius:8px;overflow:hidden;background:#eef0e7}.local-photo :global(img){display:block;width:100%;height:auto;max-height:420px;object-fit:contain}.local-photo figcaption{font-size:13px;line-height:1.9;padding:14px 18px;color:#40554a}
+</style>

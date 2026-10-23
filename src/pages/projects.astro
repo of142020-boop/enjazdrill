@@ -1,4 +1,5 @@
 ---
+import SiteImage from '../components/SiteImage.astro';
 import Layout from '../layouts/Layout.astro';
 
 const projectImages1 = [
@@ -21,10 +22,10 @@ const projectImages3 = [
   { src: '/images/ماكينة-كور-دريل-الماني.webp', alt: 'معدات التخريم' },
 ];
 ---
-<Layout title="معرض الأعمال | إنجاز دريل لقص وتخريم الخرسانة" description="شاهد أعمال إنجاز دريل في قص وتخريم الخرسانة في مصر" canonical="https://enjazdrill.com/projects/" navbarStyle="solid">
+<Layout title="معرض الأعمال | إنجاز دريل لقص وتخريم الخرسانة" description="صور لأعمال قص الخرسانة وفتحات الكور ومعدات إنجاز دريل. تعرف على تطبيقات التخريم والقص، وأرسل صور موقعك ومقاساته لمراجعة نطاق التنفيذ." canonical="https://enjazdrill.com/projects/" navbarStyle="solid">
 
   <section class="page-hero">
-    <h1>معرض أعمال إنجاز دريل<br/>لقص وتخريم الخرسانة</h1>
+    <h1>معرض أعمال إنجاز دريل<br/>لقص وتخريم الخرسانة <bdi class="heading-phone">| 01029834485</bdi></h1>
   </section>
 
   <section class="page-content">
@@ -34,9 +35,10 @@ const projectImages3 = [
       <h2 class="section-title">أعمال تخريم الكور</h2>
       <div class="gallery-grid">
         {projectImages1.map(img => (
-          <div class="gallery-item">
-            <img src={img.src} alt={img.alt} loading="lazy" />
-          </div>
+          <figure class="gallery-item">
+            <SiteImage src={img.src} alt={img.alt} loading="lazy" width="600" height="450" />
+            <figcaption style="padding:12px;background:white;">{img.alt}</figcaption>
+          </figure>
         ))}
       </div>
     </div>
@@ -46,9 +48,10 @@ const projectImages3 = [
       <div class="section-label">خدمات التعديلات المعمارية</div>
       <div class="gallery-grid">
         {projectImages2.map(img => (
-          <div class="gallery-item">
-            <img src={img.src} alt={img.alt} loading="lazy" />
-          </div>
+          <figure class="gallery-item">
+            <SiteImage src={img.src} alt={img.alt} loading="lazy" width="600" height="450" />
+            <figcaption style="padding:12px;background:white;">{img.alt}</figcaption>
+          </figure>
         ))}
       </div>
     </div>
@@ -58,9 +61,10 @@ const projectImages3 = [
       <div class="section-label">تجهيزات التشطيبات والتأسيس</div>
       <div class="gallery-grid">
         {projectImages3.map(img => (
-          <div class="gallery-item">
-            <img src={img.src} alt={img.alt} loading="lazy" />
-          </div>
+          <figure class="gallery-item">
+            <SiteImage src={img.src} alt={img.alt} loading="lazy" width="600" height="450" />
+            <figcaption style="padding:12px;background:white;">{img.alt}</figcaption>
+          </figure>
         ))}
       </div>
     </div>

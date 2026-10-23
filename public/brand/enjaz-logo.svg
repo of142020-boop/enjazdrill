@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 104" width="420" height="104" role="img" aria-label="إنجاز دريل">
+ <g transform="translate(320 4)">
+  <path fill="#173b37" d="M20 4h49l23 23v49a16 16 0 0 1-16 16H20A16 16 0 0 1 4 76V20A16 16 0 0 1 20 4Z"/>
+  <circle cx="48" cy="48" r="26" fill="none" stroke="#fafaf6" stroke-width="9"/>
+  <path d="M48 22a26 26 0 0 1 26 26" fill="none" stroke="#df985c" stroke-width="9"/>
+  <path d="m24 72 48-48" fill="none" stroke="#173b37" stroke-width="15"/>
+  <path d="m23 73 50-50" fill="none" stroke="#df985c" stroke-width="6"/>
+  <path d="M43 48h10M48 43v10" stroke="#fafaf6" stroke-width="3"/>
+ </g>
+ <text x="296" y="56" direction="rtl" font-family="Tahoma,Arial,sans-serif" font-size="45" font-weight="700" fill="#173b37">إنجاز دريل</text>
+ <path d="M292 72h-26" stroke="#b94029" stroke-width="3"/>
+ <text x="250" y="81" text-anchor="end" font-family="Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="4" fill="#53675c">ENJAZ DRILL</text>
+</svg>

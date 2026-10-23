@@ -1,10 +1,11 @@
 ---
+import SiteImage from '../components/SiteImage.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout title="اتصل بنا | إنجاز دريل - 01029834485" description="تواصل مع إنجاز دريل للحصول على عرض سعر فوري لخدمات قص وتخريم الخرسانة">
 
   <section class="page-hero">
-    <h1>تواصل معنا</h1>
+    <h1>تواصل معنا <bdi class="heading-phone">| 01029834485</bdi></h1>
   </section>
 
   <section class="page-content">
@@ -13,18 +14,18 @@ import Layout from '../layouts/Layout.astro';
       <!-- Contact Form -->
       <div class="form-section">
         <h2>هل لديك مشروع؟ اطلب عرض سعر</h2>
-        <form class="contact-form" action="https://api.whatsapp.com/send/?phone=201029834485" method="get" target="_blank">
+        <form class="contact-form" id="contact-form" action="https://wa.me/201029834485" method="get" target="_blank" rel="noopener noreferrer">
           <div class="form-group">
-            <input type="text" name="your-name" placeholder="اسمك" required />
+            <input type="text" name="your-name" aria-label="الاسم" autocomplete="name" placeholder="اسمك" required />
           </div>
           <div class="form-group">
-            <input type="email" name="your-email" placeholder="البريد الإلكتروني" />
+            <input type="email" name="your-email" aria-label="البريد الإلكتروني" autocomplete="email" placeholder="البريد الإلكتروني" />
           </div>
           <div class="form-group">
-            <input type="tel" name="your-phone" placeholder="رقم الهاتف" required />
+            <input type="tel" name="your-phone" aria-label="رقم الهاتف" autocomplete="tel" placeholder="رقم الهاتف" required />
           </div>
           <div class="form-group">
-            <textarea name="your-message" placeholder="اشرح طلبك..." rows="5" required></textarea>
+            <textarea name="text" aria-label="تفاصيل الطلب" placeholder="اشرح طلبك..." rows="5" required></textarea>
           </div>
           <button type="submit" class="btn-primary" style="width:100%;border:none;cursor:pointer;font-family:inherit;font-size:18px;">
             إرسال عبر واتساب
@@ -69,7 +70,7 @@ import Layout from '../layouts/Layout.astro';
         <!-- Direct WhatsApp CTA -->
         <div style="margin-top:30px;text-align:center;">
           <a href="https://wa.me/201029834485" target="_blank" rel="noopener">
-            <img src="/images/مخلفات-قص-وتخريم.webp" alt="راسلنا واتساب" style="border-radius:8px;width:100%;object-fit:cover;max-height:200px;" />
+            <SiteImage src="/images/مخلفات-قص-وتخريم.webp" alt="راسلنا واتساب" style="border-radius:8px;width:100%;object-fit:cover;max-height:200px;" />
           </a>
           <p style="color:var(--text-muted);margin-top:10px;font-size:14px;">اضغط للتواصل عبر واتساب مباشرة</p>
         </div>
@@ -134,3 +135,12 @@ import Layout from '../layouts/Layout.astro';
 .phone { background: var(--primary-pink); }
 @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
 </style>
+
+<script>
+ document.getElementById('contact-form')?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const data = new FormData(event.currentTarget as HTMLFormElement);
+  const message = `مرحبًا إنجاز دريل، أريد الاستفسار عن مشروع.\nالاسم: ${data.get('your-name')}\nالهاتف: ${data.get('your-phone')}\nالبريد: ${data.get('your-email') || 'لم يذكر'}\nالتفاصيل: ${data.get('text')}`;
+  window.open(`https://wa.me/201029834485?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+ });
+</script>
